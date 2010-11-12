@@ -1,0 +1,21 @@
+/* Navigation */
+
+nav#mail {
+	float: right;
+}
+
+nav#main ul {
+	list-style: none;
+}
+
+nav#main ul li {
+	float: left;
+}
+
+nav#footer ul {
+	list-style: none;
+}
+
+nav#footer ul li {
+	float: left;
+}
