@@ -520,6 +520,101 @@ a.flickr {
 	padding: 1px 0px 1px 25px;
 	display: block; }
 
+label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#event-title {
+	width: 640px;
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#event-desc {
+	width: 640px;
+	height: 100px;
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-name {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+.minutes {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+.hour {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#start-time {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#end-time {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-name {
+	width: 640px;
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-desc {
+	width: 640px;
+	height: 150px;
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-address-1 {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-address-2 {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-town-city {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-county {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
+
+#venue-postcode {
+	font-size: 1.3em;
+	padding: 5px;
+	border: 1px solid #E6DFDA;
+}
 
 /* 
  * print styles
