@@ -28,6 +28,7 @@
 					<h1>Ticketseller</h1>
 					<nav id="account_navigation">
 						<ul>
+							<li id="login_name">Welcome, Craig Plummer</li>
 							<li><a href="/account/manage/index.cfm">Manage Account</a></li>
 							<li><a href="/account/help/index.cfm">Help</a></li>
 							<li><a href="?logout">Logout</a></li>
@@ -43,8 +44,8 @@
 					<nav id="main_tabs">
 						<ul id="main_nav">
 							<li id="current">Dashboard</li>
-							<li><a href="/my-events/index.cfm">My Events</a></li>
-							<li><a href="/my-tickets/index.cfm">My Tickets</a></li>
+							<li><a href="/account/my-events/index.cfm">My Events</a></li>
+							<li><a href="/account/my-tickets/index.cfm">My Tickets</a></li>
 						</ul>
 					</nav>
 				</section>
