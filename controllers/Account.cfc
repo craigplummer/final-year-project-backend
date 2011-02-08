@@ -1,5 +1,9 @@
 ﻿<cfcomponent extends="Controller" output="false">
 
+	<cffunction name="init">
+		 <cfset provides("html,json")>
+	</cffunction>
+
 	<cffunction name="register">
 		
 		<cfset user = model("person").new()>
@@ -42,6 +46,26 @@
 			<cfset renderPage(action="login", layout="loginLayout")>
 		</cfif>
 				
+	</cffunction>
+	
+	<cffunction name="mobilesignin">
+	
+		<cfset user = model("person").findOne(where="email='#params.email#' AND password='#params.password#'")>
+	
+		<cfif IsObject(user)>
+			<cfset response = {}>
+			<cfset response['success'] = "true">
+		<cfelse>
+			<cfset response = {}>
+			<cfset response['success'] = "false">
+		</cfif>
+		
+		<cfset renderWith(response)>
+		
+		<cfif isAjax()>
+        	<cfset renderRemotePage()>
+		</cfif>
+	
 	</cffunction>
 	
 	<cffunction name="logout">
