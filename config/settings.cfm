@@ -3,6 +3,11 @@
 --->
 	<cfset set(dataSourceName="ticketseller")>
 
+<!--- Adding new data types --->
+
+<cfset addFormat(extension="json", mimeType="application/json")> 
+
+
 
 <!---
 	If you leave this setting commented out, Wheels will try to determine the URL rewrite capabilities automatically.
