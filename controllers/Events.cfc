@@ -1,16 +1,16 @@
 ﻿<cfcomponent extends="Controller">
 
 	<cffunction name="new">
-	
 		<cfset var newTickets = [ model("ticket").new() ]>
 		<cfset event = model("event").new(tickets=newTickets)>
-		<cfset venues = model("venue").findAll()>
+		
+		<cfset venues = model("venues").findAll()>
 
 	</cffunction>
 	
 	<cffunction name="create">
-	
 		<cfset event = model("event").new(params.event)>
+		<cfset event.personid = session.user.id>
 		<cfset event.save()>
 		
 		<cfif event.hasErrors()>

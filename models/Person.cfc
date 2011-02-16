@@ -1,6 +1,10 @@
 ﻿<cfcomponent extends="Model">
 
+	
+
 	<cffunction name="init">
+	
+		<cfset hasMany("events")>
 		
 		<cfset validatesPresenceOf("firstname, surname, email")>
 		<cfset validatesUniquenessOf("email")>

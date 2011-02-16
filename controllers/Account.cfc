@@ -61,10 +61,6 @@
 		</cfif>
 		
 		<cfset renderWith(response)>
-		
-		<cfif isAjax()>
-        	<cfset renderRemotePage()>
-		</cfif>
 	
 	</cffunction>
 	

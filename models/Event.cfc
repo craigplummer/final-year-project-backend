@@ -2,7 +2,9 @@
 
 	<cffunction name="init">
 	
-	<cfset belongsTo("venue")>	
+	<!--- Associations --->
+	<cfset belongsTo("person")>
+	<cfset hasOne("venue")>	
 	<cfset hasMany("tickets")>
 	
 	<cfset nestedProperties(
