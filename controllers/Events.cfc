@@ -1,5 +1,9 @@
 ﻿<cfcomponent extends="Controller">
 
+	<cffunction name="init">
+		 <cfset provides("html,json")>
+	</cffunction>
+
 	<cffunction name="new">
 		<cfset var newTickets = [ model("ticket").new() ]>
 		<cfset event = model("event").new(tickets=newTickets)>
@@ -20,6 +24,11 @@
 			<cfset redirectTo(controller="events", action="new")>
 		</cfif>
 	
+	</cffunction>
+	
+	<cffunction name="featured">
+		<cfset event = model("event").findAll(where="featured=1")>
+		<cfset renderWith(event)>
 	</cffunction>
 
 </cfcomponent>
