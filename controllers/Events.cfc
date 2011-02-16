@@ -27,8 +27,8 @@
 	</cffunction>
 	
 	<cffunction name="featured">
-		<cfset event = model("event").findAll(where="featured=1")>
-		<cfset renderWith(event)>
+		<cfset eventListing = model("event").findAll(where="featured=1")>
+		<cfset renderWith(eventListing)>
 	</cffunction>
 
 </cfcomponent>
