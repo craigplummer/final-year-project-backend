@@ -265,6 +265,14 @@ ul#error li, ul.errorMessages li {
 	margin-left: 0px;
 }
 
+ul.form li {
+	clear:both;
+}
+
+.clear {
+	clear:both;
+}
+
 #login-controls label {
 	font-size: 115%;
 	display: block;

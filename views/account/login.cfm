@@ -11,13 +11,14 @@
 		<li>#flash("error")#</li>
 	</ul>
 </cfif>
-<ul>
+<ul class="form">
 #textField(label="E-Mail Address", objectName="user", property="email")#
 #passwordField(label="Password", objectName="user", property="password")#
 </ul>
+<div class="clear">
 #linkTo(text="Forgotten your password?", controller="account", action="register", id="forgotpass")#
-#submitTag(value="Login")#
-
+#submitTag(value="Login", id="loginbutton")#
+</div>
 #endFormTag()#
 
 </cfoutput>
