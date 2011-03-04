@@ -14,6 +14,7 @@
 	<cffunction name="create">
 	
 		<cfset user = model("person").new(params.user)>
+		<cfset user.id = createuuid()>
 		<cfset user.save()>
 		
 		<cfif user.hasErrors()>
