@@ -6,6 +6,7 @@
 	
 		<cfset hasMany("events")>
 		
+		
 		<cfset validatesPresenceOf("firstname, surname, email")>
 		<cfset validatesUniquenessOf("email")>
 		<cfset validatesLengthOf(property="firstname", maximum=50)>

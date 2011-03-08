@@ -10,6 +10,7 @@
 		<p>#ticketdetails.ticketname#</p>
 		<p>#ticketdetails.ticketdesc#</p>
 		<p>#ticketdetails.price#</p>
+		<a href="/orders/tickets?ticketid=#ticketdetails.id#">Order</a>
 	</cfloop>
 	
 	

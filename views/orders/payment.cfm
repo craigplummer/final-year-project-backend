@@ -2,10 +2,13 @@
 
 #showPaypalButton(type="_xclick",
 business="sell_1299181492_biz@craigplummer.co.uk",
-amount="10",
-itemName="Ticketseller Ticket",
-itemNumber="1230",
-quantity="3",
+amount="#ticket.price#",
+itemName="#event.eventtitle# - #ticket.ticketname#",
+itemNumber="#order.ticketid#",
+quantity="#order.qty#",
+custom="#params.orderid#",
+return="http://ts.craigplummer.co.uk/order/confirm/?orderid=#params.orderid#",
+notifyUrl="http://ts.craigplummer.co.uk/order/verify/?orderid=#params.orderid#",
 currency="GBP")#
 
 </cfoutput>
