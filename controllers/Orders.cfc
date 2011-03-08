@@ -53,6 +53,20 @@
 	<cffunction name="confirm">
 	</cffunction>
 	
+	<cffunction name="googleconfirm">
+		
+
+		<cfset ResponseData = GetHTTPRequestData().content>
+
+		<cfset ResponseXML = processXmlData(XMLData = ResponseData)>
+
+<cfif isXML(ResponseXML)>
+	<!--- Send google a message saying that you received the message --->
+	<cfcontent reset="true" type="text/xml">
+	<cfset notifyGoogle = SendNotificationAcknowledgement()>
+</cfif>
+	</cffunction>
+	
 	<cffunction name="verify">
 		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
 		<cfset ticket = model("ticket").findOne(where="id='#order.ticketid#'")>
