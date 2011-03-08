@@ -7,7 +7,8 @@
 
 <cfset addFormat(extension="json", mimeType="application/json")> 
 
-
+<!---Set a reload password--->
+<cfset set(reloadPassword="3nv3l0p3")>
 
 <!---
 	If you leave this setting commented out, Wheels will try to determine the URL rewrite capabilities automatically.

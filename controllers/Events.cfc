@@ -14,7 +14,9 @@
 	
 	<cffunction name="create">
 		<cfset event = model("event").new(params.event)>
+		<cfset event.id = createuuid()>
 		<cfset event.personid = session.user.id>
+		<cfset ticket.id = createuuid()>
 		<cfset event.save()>
 		
 		<cfif event.hasErrors()>
