@@ -7,8 +7,8 @@ itemName="#event.eventtitle# - #ticket.ticketname#",
 itemNumber="#order.ticketid#",
 quantity="#order.qty#",
 custom="#params.orderid#",
-return="http://ts.craigplummer.co.uk/order/confirm/?orderid=#params.orderid#",
-notifyUrl="http://ts.craigplummer.co.uk/order/verify/?orderid=#params.orderid#",
+return="http://ts.craigplummer.co.uk/orders/confirm/?orderid=#params.orderid#",
+notifyUrl="http://ts.craigplummer.co.uk/orders/verify/?orderid=#params.orderid#",
 currency="GBP")#
 
 </cfoutput>
