@@ -28,18 +28,17 @@
 	<body id="main">
 			
 				<header>
-					<h1>Ticketseller</h1>
-					<nav id="main-navigation">
-						<ul>
-							
-							<li>#linkTo(text="Dashboard", controller="account", action="dashboard")#</li>
-							<li>#linkTo(text="My Events", controller="events", action="home")#</li>
-							<li>#linkTo(text="Manage Account", controller="account", action="manage")#</li>
-							<li>#linkTo(text="Logout", controller="account", action="logout")#</li>
-							<li id="add-event">#linkTo(text="Add New Event", controller="events", action="new")#</li>
-						</ul>
-					</nav>
-					<div class="clearfix">
+					<div id="header-inner">
+						<h1>Ticket<span class="seller">seller</span></h1>
+						<nav id="main-navigation">
+							<ul>
+								<li>#linkTo(text="Dashboard", controller="account", action="dashboard")#</li>
+								<li>#linkTo(text="My Events", controller="events", action="home")#</li>
+								<li id="add-event">#linkTo(text="Add New Event", controller="events", action="new")#</li>
+								<li id="logged-in">#session.user.firstname# #session.user.surname#</li>
+							</ul>
+						</nav>
+					</div>
 				</header>
 				
 			</div>

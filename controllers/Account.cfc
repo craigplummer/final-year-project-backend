@@ -40,6 +40,8 @@
 		
 		<cfif IsObject(user)>
 			<cfset session.user.id = user.id>
+			<cfset session.user.firstname = user.firstname>
+			<cfset session.user.surname = user.surname>
 			<cfset redirectTo(controller="account", action="dashboard")>
 		<cfelse>
 			<cfset user = model("person").new(email=params.user.email)>

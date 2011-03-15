@@ -208,6 +208,14 @@ body {
 	background-repeat: repeat;
 }
 
+p {
+	font-size: 115%;
+}
+
+.logintext {
+	padding: 0px 20px 0px 0px;
+}
+
 header {
 	height: 50px;
 	position: fixed;
@@ -226,27 +234,27 @@ header {
 }
 
 #header-inner h1 {
-	font-size: 150%;
+	font-size: 185%;
 	color: #ffffff;
 	padding: 12px 0 0 0;
+	float: left;
 }
 
 .seller {
 	color:#87bf1b;
-	font-style: italic;
 }
 
 #login_container {
-	width: 960px;
-	
-	margin: 50px auto;
-	padding: 20px 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
+	width: 720px;
+	margin: 90px auto 40px auto;
+	padding: 10px 10px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px; 
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #login footer {
-	width: 650px;
+	width: 960px;
 	margin: 10px auto;
 }
 
@@ -265,14 +273,9 @@ ul#error li, ul.errorMessages li {
 	margin: 7px 0px;
 }
 
-
-#login-screen {
-	width: 650px;
-	margin: 180px auto 0px auto;
-}
-
 #login-screen h1{
 	font-size: 220%;
+	
 }
 
 #login h2 {
@@ -281,16 +284,22 @@ ul#error li, ul.errorMessages li {
 }
 
 #login-controls {
-	width: 370px;
+	width: 440px;
 	float: left;
 	margin: 10px 0px;
 	padding: 5px 15px;
-	border-right: 1px solid #dfdfdf;
+	border-right: 1px solid #828282;
+}
+
+#login-button {
+	width: 415px;
+	margin: 10px 0;
 }
 
 #login-controls ul{
 	list-style: none;
-	margin-left: 0px;
+	margin: 15px 0px 0px 0px;
+	
 }
 
 ul.form li {
@@ -306,18 +315,19 @@ ul.form li {
 	display: block;
 	float: left;
 	width: 140px;
-	padding: 10px 0px;
+	padding: 15px 0px;
 	margin-bottom: 10px;
 }
 
 
 #login-controls input[type="text"], #login-controls input[type="password"]{
-	background-color: white;
-	border: 1px solid #cfcfcf;
+	background-color: #e8e8e8;
+	border: 2px solid #828282;
 	line-height: 10px;
 	padding: 10px;
 	margin-bottom: 10px;
-	width: 206px;
+	font-size: 120%;
+	width: 250px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px; 
 }
@@ -376,30 +386,17 @@ ul.form li {
 
 /* Main Styles */
 
-body#main {
-	background-color: #dfdfdf;
-}
 
-#main header {
-	width: 860px;
-	margin: 50px auto 10px auto;
-}
-
-#main header h1{
-	width: 200px;
-	float: left;
-	font-size: 220%;
-}
 
 #main-navigation {
-	width: 590px;
 	float: right;
+	margin: 10px 0px 0px 0px;
 }
 
 #main-navigation ul li{
 	float: left;
 	font-weight: bold;
-	margin: 0px 30px 0px 0px;
+	margin: 0px 0px 0px 30px;
 }
 
 #main-navigation ul li a{
@@ -407,13 +404,22 @@ body#main {
 	line-height: 25px;
 }
 
+#logged-in {
+	color: #ffffff;
+	line-height: 25px;
+	background: url(/images/icons/stock_person.png) no-repeat 3px, url(/images/icons/download.gif) no-repeat 135px 11px;
+	padding-left: 30px;
+	width: 130px;
+}
+
+.arrow {
+	margin-left: 5px;
+	margin-top: 0px;
+}
+
 #main-container {
-	width: 860px;
-	margin: 10px auto;
-	background-color: #ffffff;
-	border: 1px solid #ffffff;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
+	width: 960px;
+	margin: 70px auto;
 }
 
 #add-event {
@@ -442,9 +448,11 @@ body#main {
 }
 
 #main-content {
-	width: 660px;
-	float: right;
-	border-left: 1px solid #dfdfdf;
+	width: 720px;
+	float: left;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 }
 
 

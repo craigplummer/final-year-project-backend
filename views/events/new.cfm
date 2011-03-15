@@ -1,7 +1,4 @@
 ﻿<cfoutput>
-<div id="left-nav">
-Left nav goes here
-</div>
 
 
 <div id="main-content">

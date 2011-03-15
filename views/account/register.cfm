@@ -3,6 +3,7 @@
 <cfoutput>
 
 <h2>Register</h2>
+<p class="logintext">Please complete all the fields on this form to setup your Ticketseller account.</p>
 
 #startFormTag(action="create")#
 
@@ -16,9 +17,9 @@
 #passwordField(label="Confirm Password", objectName="user", property="passwordConfirmation")#
 </ul>
 
-
+<div id="login-button" class="clear">
 #submitTag(value="Register")#
-
+</div>
 
 #endFormTag()#
 

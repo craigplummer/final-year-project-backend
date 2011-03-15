@@ -22,7 +22,9 @@
 	</head>
 	
 	<body id="login">
-		<header id="login-screen"><h1>Ticketseller</h1></header>
+		<header>
+			<div id="header-inner"><h1>Ticket<span class="seller">seller</span></h1></div>
+		</header>
 		
 		<div id="login_container">
 			
