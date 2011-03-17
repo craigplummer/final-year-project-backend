@@ -5,10 +5,9 @@
 
 	<cffunction name="details">
 		<cfset eventdetails = model("event").findOne(where="id=#params.eventid#")>
-		<cfset ticketdetails = model("ticket").findAll(where="id=#eventdetails.id#")>
+		<cfset ticketdetails = model("ticket").findAll(where="eventid=#params.eventid#")>
 		
-	<!--- <cfdump var="#eventdetails#">
-		<cfdump var="#ticketdetails#"> --->
+	
 		
 		<cfset renderPage(layout="orderlayout")>
 		
@@ -35,7 +34,7 @@
 		<cfset order.paymentstatus = 0>
 		<cfset order.save()>
 		
-		<cfset redirectTo(controller="orders", action="payment", params="orderid=#order.id#")>
+		<cfset renderPage(controller="orders", action="payment", params="orderid=#order.id#")>
 	</cffunction>
 	
 	<cffunction name="payment">
