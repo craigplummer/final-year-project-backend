@@ -1,10 +1,10 @@
-<h1>Create new venues</h1>
+<h1>Editing venues</h1>
 
 <cfoutput>
 
 			#errorMessagesFor("venues")#
 	
-			#startFormTag(action="create")#
+			#startFormTag(action="update", key=params.key)#
 		
 				
 						#textField(objectName='venues', property='name', label='Name')#
@@ -25,7 +25,7 @@
 					
 						#textField(objectName='venues', property='postcode', label='Postcode')#
 					
-
+				
 				#submitTag()#
 				
 			#endFormTag()#
