@@ -64,10 +64,10 @@
     	<cfset converter = application.javaloader.create("com.google.zxing.client.j2se.MatrixToImageWriter")>  
     	<cfset buff = converter.toBufferedImage( bitMatrix ) />  
     	<!--- convert it to a CF compatible image --->  
-    	<cfset img = ImageNew( buff ) />  
+    	<cfset img = imageGetBlob( buff ) />  
   		<!--- display results --->  
-        <cfimage action="read" name="barcode" source="#img#" format="png">
-		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcode)#")>
+    
+		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#img#")>
 	</cffunction>
 
 	<cffunction name="verify">
