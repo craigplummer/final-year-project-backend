@@ -65,8 +65,8 @@
     	<cfset buff = converter.toBufferedImage( bitMatrix ) />  
     	<!--- convert it to a CF compatible image --->  
     	<cfset img = ImageNew( buff ) />  
-		<cfimage action = "write" destination = "/barcodes/#params.orderid#.png" source = "#img#">
-		<cfset barcodeLocation = "/barcodes/#params.orderid#.png">
+		<cfimage action = "write" destination = "/var/www/html/barcodes/#params.orderid#.png" source = "#img#">
+		<cfset barcodeLocation = "/var/www/html/barcodes/#params.orderid#.png">
   		<!--- display results --->  
 		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcodeLocation)#")>
 	</cffunction>
