@@ -1,4 +1,11 @@
-﻿<cftry>  
+﻿		<cfscript>
+
+			//create the loader
+			loader = createObject("component", "javaloader.JavaLoader").init();
+
+		</cfscript>
+
+<cftry>  
     <cfset origText = "http://mobile.ticketseller.co.uk/ticket/123456" />  
     <!--- initialize writer and create a new barcode matrix --->  
     <cfset BarcodeFormat = loader.create("com.google.zxing.BarcodeFormat") />  
