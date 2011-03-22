@@ -61,7 +61,7 @@
 		
 		<cfset ordertotal = #order.qty# * #ticket.price#>
 
-		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#ordertotal#", currency="GBP", itemNumber="#order.ticketid#", custom="#params.orderid#")>
+		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#numberformat(ordertotal, '.99')#", currency="GBP", itemNumber="#order.ticketid#", custom="#params.orderid#")>
 
 		<cfset result = model("order").updateOne(where="id='#params.orderid#'", paymentstatus=#return#)>
 		
@@ -69,7 +69,7 @@
 			<cfoutput>
 			<cfdump var="#return#" format="text">
 			<cfdump var="#params#" format="text">
-			#ordertotal#
+			#numberformat(ordertotal, '.99')#
 			</cfoutput>
 		</cfmail>
 
