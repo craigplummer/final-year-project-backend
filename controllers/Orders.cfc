@@ -60,7 +60,7 @@
 			
 			<cfset CharSet = "QWERTYUPASDFGHJKLZXCVBNM23456789" />
    			<cfset CurChar = "" />
-  		    <cfset Password = "" />
+  		    <cfset ticketNumber = "" />
 
    			<cfloop from="1" to="8" index="Cnt">
       			<cfset CurChar = Mid(CharSet, RandRange(1,Len(CharSet)), 1) />
