@@ -62,6 +62,13 @@
 		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#ticket.price#", currency="GBP", itemNumber="#order.ticketid#", qty="#order.qty#", custom="#params.orderid#")>
 
 		<cfset result = model("order").updateOne(where="id='#params.orderid#'", paymentstatus=#return#)>
+		
+		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
+			<cfdump var="#result.allerrors()#"
+		</cfmail>
+
+		
+
 
 	</cffunction>
 
