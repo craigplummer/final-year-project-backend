@@ -55,7 +55,21 @@
 	<cffunction name="confirm">
 		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
 		
-		<cfset ticketText = "http://mobile.ticketseller.co.uk/ticket/123456" />  
+		<cfif order.paymentstatus EQ "1">
+			<!---First Generate a Ticket Number--->
+			
+			<cfset CharSet = "QWERTYUPASDFGHJKLZXCVBNM23456789" />
+   			<cfset CurChar = "" />
+  		    <cfset Password = "" />
+
+   			<cfloop from="1" to="8" index="local.Cnt">
+      			<cfset CurChar = Mid(CharSet, RandRange(1,Len(local.CharSet)), 1) />
+      			<cfset ticketNumber = ticketNumber & local.CurChar />
+   			</cfloop>
+			
+			
+		
+		<cfset ticketText = "http://mobile.ticketseller.co.uk/ticket/#ticketNumber#" />  
     	<!--- initialize writer and create a new barcode matrix --->  
     	<cfset BarcodeFormat = application.javaloader.create("com.google.zxing.BarcodeFormat") />  
     	<cfset writer = application.javaloader.create("com.google.zxing.qrcode.QRCodeWriter").init() />  
@@ -66,9 +80,11 @@
     	<!--- convert it to a CF compatible image --->  
     	<cfset img = ImageNew( buff ) />  
 		<cfimage action = "write" destination = "/var/www/html/barcodes/#params.orderid#.png" source = "#img#">
-		<cfset barcodeLocation = "/var/www/html/barcodes/#params.orderid#.png">
+		<cfimage source="/var/www/html/barcodes/#params.orderid#.png" name="barcodeLocation">
   		<!--- display results --->  
-		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcodeLocation)#")>
+		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcodeLocation)#", ticketnumber="#ticketNumber#")>
+		
+		</cfif>
 	</cffunction>
 
 	<cffunction name="verify">
