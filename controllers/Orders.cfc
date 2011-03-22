@@ -62,9 +62,9 @@
    			<cfset CurChar = "" />
   		    <cfset Password = "" />
 
-   			<cfloop from="1" to="8" index="local.Cnt">
-      			<cfset CurChar = Mid(CharSet, RandRange(1,Len(local.CharSet)), 1) />
-      			<cfset ticketNumber = ticketNumber & local.CurChar />
+   			<cfloop from="1" to="8" index="Cnt">
+      			<cfset CurChar = Mid(CharSet, RandRange(1,Len(CharSet)), 1) />
+      			<cfset ticketNumber = ticketNumber & CurChar />
    			</cfloop>
 			
 			
