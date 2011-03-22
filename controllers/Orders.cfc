@@ -59,15 +59,14 @@
     	<!--- initialize writer and create a new barcode matrix --->  
     	<cfset BarcodeFormat = application.javaloader.create("com.google.zxing.BarcodeFormat") />  
     	<cfset writer = application.javaloader.create("com.google.zxing.qrcode.QRCodeWriter").init() />  
-    	<cfset bitMatrix = writer.encode( ticketText, BarcodeFormat.QR_CODE, 120, 120 )>  
+    	<cfset bitMatrix = writer.encode( tText, BarcodeFormat.QR_CODE, 120, 120 )>  
     	<!--- render the matrix as a bufferedimage --->  
     	<cfset converter = application.javaloader.create("com.google.zxing.client.j2se.MatrixToImageWriter")>  
     	<cfset buff = converter.toBufferedImage( bitMatrix ) />  
     	<!--- convert it to a CF compatible image --->  
-    	<cfset img = imageGetBlob( buff ) />  
+    	<cfset img = ImageNew( buff ) />  
   		<!--- display results --->  
-    
-		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#img#")>
+		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(img)#")>
 	</cffunction>
 
 	<cffunction name="verify">
