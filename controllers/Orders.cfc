@@ -58,13 +58,19 @@
 	<cffunction name="verify">
 		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
 		<cfset ticket = model("ticket").findOne(where="id='#order.ticketid#'")>
+		
+		<cfset ordertotal = #order.qty# * #ticket.price#>
 
-		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#ticket.price#", currency="GBP", itemNumber="#order.ticketid#", qty="#order.qty#", custom="#params.orderid#")>
+		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#ordertotal#", currency="GBP", itemNumber="#order.ticketid#", custom="#params.orderid#")>
 
 		<cfset result = model("order").updateOne(where="id='#params.orderid#'", paymentstatus=#return#)>
 		
 		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
+			<cfoutput>
 			<cfdump var="#return#" format="text">
+			<cfdump var="#params#" format="text">
+			#ordertotal#
+			</cfoutput>
 		</cfmail>
 
 		
