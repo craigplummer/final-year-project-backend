@@ -64,7 +64,7 @@
 		<cfset result = model("order").updateOne(where="id='#params.orderid#'", paymentstatus=#return#)>
 		
 		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
-			<cfdump var="#result.allerrors()#">
+			<cfdump var="#result#">
 		</cfmail>
 
 		
