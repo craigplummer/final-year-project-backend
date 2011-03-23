@@ -26,6 +26,12 @@
 			
 	</cffunction>
 	
+	<cffunction name="mobileregister">
+		<cfset user = model("person").new()>
+		<cfset renderPage(layout="mobilelayout")>
+		
+	</cffunction>
+	
 	<cffunction name="twitter">
 		<cfset Twitter = application.javaloader.create("twitter4j.Twitter")>
 		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
@@ -33,6 +39,8 @@
 		<cfset RequestToken = Twitter.getOAuthRequestToken()>
 		<cfset Session.oAuthRequestToken = RequestToken.getToken()>
 		<cfset Session.oAuthRequestTokenSecret = RequestToken.getTokenSecret()>
+		
+		<cflocation url="#RequestToken.getAuthorizationURL()#" addtoken="No">
 		
 		
 	</cffunction>

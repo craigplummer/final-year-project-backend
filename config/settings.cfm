@@ -18,5 +18,5 @@
 	<cfset set(URLRewriting="Partial")>
 --->
 
-	<cfset set(functionName="textField", labelPlacement="before", prependToLabel="<li>", append="</li>")> 
-	<cfset set(functionName="passwordField", labelPlacement="before", prependToLabel="<li>", append="</li>")>
+	<cfset set(functionName="textField", labelPlacement="before")> 
+	<cfset set(functionName="passwordField", labelPlacement="before")>
