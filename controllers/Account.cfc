@@ -26,6 +26,17 @@
 			
 	</cffunction>
 	
+	<cffunction name="twitter">
+		<cfset Twitter = application.javaloader.create("java", "twitter4j.Twitter")>
+		<cfset Twitter.setOAuthConsumer(q8RebEtK6UObawa7Ia4zQ,SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo)>
+		
+		<cfset RequestToken = Twitter.getOAuthRequestToken()>
+		<cfset Session.oAuthRequestToken = RequestToken.getToken()>
+		<cfset Session.oAuthRequestTokenSecret = RequestToken.getTokenSecret()>
+		
+		
+	</cffunction>
+	
 	<cffunction name="login">
 	
 		

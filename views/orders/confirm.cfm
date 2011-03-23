@@ -13,12 +13,9 @@
     <cfset img = ImageNew( buff ) />  
   
     <!--- display results --->  
-    <div>  
-        <cfimage action="writeToBrowser" source="#img#" format="png"> <br />
-        <cfoutput>#ticketnumber#</cfoutput> 
-    </div>  
+    
+        <cfimage action="read" name="barcode" source="#img#" format="png"> <br />
+        
+     
     <!--- add real exception handling here ...--->  
-    <cfcatch>  
-        ERROR: Unable to generate barcode <cfoutput>#cfcatch.message#</cfoutput>  
-    </cfcatch>  
 </cftry>  

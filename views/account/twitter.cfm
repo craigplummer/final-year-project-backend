@@ -1,0 +1,1 @@
+﻿<a href="#RequestToken.getAuthorizationURL()#">Authenticate with twitter</a>
