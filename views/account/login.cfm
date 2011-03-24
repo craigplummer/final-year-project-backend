@@ -12,8 +12,8 @@
 	</ul>
 </cfif>
 <ul class="form">
-#textField(label="E-Mail Address", objectName="user", property="email")#
-#passwordField(label="Password", objectName="user", property="password")#
+<li>#textField(label="E-Mail Address", objectName="user", property="email")#</li>
+<li>#passwordField(label="Password", objectName="user", property="password")#</li>
 </ul>
 <div id="login-button" class="clear">
 #linkTo(text="Forgotten your password?", controller="account", action="register", id="forgotpass")#

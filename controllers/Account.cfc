@@ -32,6 +32,19 @@
 		
 	</cffunction>
 	
+	<cffunction name="mobilecreate">
+		<cfset user = model("person").new(params.user)>
+		<cfset user.id = createuuid()>
+		<cfset user.save()>
+		
+		<cfif user.hasErrors()>
+			<cfset renderPage(action="mobileregister", layout="mobilelayout")>
+		<cfelse>
+			<cfset flashInsert(success="Registration was sucessful")>
+			<cfset redirectTo(controller="account", action="mobilethanks")>	
+		</cfif>
+	</cffunction>
+	
 	<cffunction name="twitter">
 		<cfset Twitter = application.javaloader.create("twitter4j.Twitter")>
 		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
@@ -43,6 +56,10 @@
 		<cflocation url="#RequestToken.getAuthorizationURL()#" addtoken="No">
 		
 		
+	</cffunction>
+	
+	<cffunction name="mobilethanks">
+		<cfset renderPage(layout="mobilelayout")>
 	</cffunction>
 	
 	<cffunction name="login">
