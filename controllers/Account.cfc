@@ -46,6 +46,9 @@
 	</cffunction>
 	
 	<cffunction name="twitter">
+
+		<cfset session.user.email = #params.email#>
+			
 		<cfset Twitter = application.javaloader.create("twitter4j.Twitter")>
 		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
 		
@@ -55,6 +58,11 @@
 		
 		<cflocation url="#RequestToken.getAuthorizationURL()#" addtoken="No">
 		
+		
+	</cffunction>
+	
+	<cffunction name="twitterconfirm">
+		<cfdump var="#session#" abort>
 		
 	</cffunction>
 	
