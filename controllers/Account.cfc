@@ -62,7 +62,18 @@
 	</cffunction>
 	
 	<cffunction name="twitterconfirm">
-		<cfdump var="#session#" abort>
+		<cfset AccessToken = Twitter.getOAuthAccessToken(Session.oAuthRequestToken,Session.oAuthRequestTokenSecret)>
+		<cfset token = AccessToken.getToken()>
+		<cfset secret = AccessToken.getSecret()>
+		<cfset user = model("person").updateOne(where="email='#session.user.email#'", taccesstoken="#token#", taccesssecret="#secret#")>
+		
+		<cfif user.hasErrors()>
+			<cfset renderPage(layout="mobilelayout")>
+			<cfset flashInsert(success="Sorry there was a problem with your registration - Please try again.")>
+		<cfelse>
+			<cfset renderPage(layout="mobilelayout")>
+			<cfset flashInsert(success="You have now sucessfully authenticated with Twitter")>	
+		</cfif>
 		
 	</cffunction>
 	
