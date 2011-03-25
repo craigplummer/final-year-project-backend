@@ -69,13 +69,8 @@
 		<cfset secret = AccessToken.getTokenSecret()>
 		<cfset user = model("person").updateOne(where="email='#session.user.email#'", taccesstoken="#token#", taccesssecret="#secret#")>
 		
-		<cfif user.hasErrors()>
+		
 			<cfset renderPage(layout="mobilelayout")>
-			<cfset flashInsert(success="Sorry there was a problem with your registration - Please try again.")>
-		<cfelse>
-			<cfset renderPage(layout="mobilelayout")>
-			<cfset flashInsert(success="You have now sucessfully authenticated with Twitter")>	
-		</cfif>
 		
 	</cffunction>
 	

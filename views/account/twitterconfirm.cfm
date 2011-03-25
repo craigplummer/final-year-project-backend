@@ -1,7 +1,5 @@
 ﻿<cfoutput>
 
-<cfif flashKeyExists("success")>
-	<p>#flash("success")#</p>
-</cfif>
+<p>You have now sucessfully authenticated with Twitter</p>
 
 </cfoutput>
