@@ -62,6 +62,8 @@
 	</cffunction>
 	
 	<cffunction name="twitterconfirm">
+		<cfset Twitter = application.javaloader.create("twitter4j.Twitter")>
+		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
 		<cfset AccessToken = Twitter.getOAuthAccessToken(Session.oAuthRequestToken,Session.oAuthRequestTokenSecret)>
 		<cfset token = AccessToken.getToken()>
 		<cfset secret = AccessToken.getSecret()>
