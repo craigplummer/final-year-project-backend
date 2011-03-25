@@ -66,7 +66,7 @@
 		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
 		<cfset AccessToken = Twitter.getOAuthAccessToken(Session.oAuthRequestToken,Session.oAuthRequestTokenSecret)>
 		<cfset token = AccessToken.getToken()>
-		<cfset secret = AccessToken.getSecret()>
+		<cfset secret = AccessToken.getTokenSecret()>
 		<cfset user = model("person").updateOne(where="email='#session.user.email#'", taccesstoken="#token#", taccesssecret="#secret#")>
 		
 		<cfif user.hasErrors()>
