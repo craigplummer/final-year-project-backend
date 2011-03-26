@@ -20,3 +20,4 @@
 
 	<cfset set(functionName="textField", labelPlacement="before")> 
 	<cfset set(functionName="passwordField", labelPlacement="before")>
+	<cfset set(functionName="textArea", labelPlacement="before")>

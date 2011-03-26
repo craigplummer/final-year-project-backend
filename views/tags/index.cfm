@@ -8,10 +8,6 @@
 				
 					<cfcol header="Name" text="#name#" />
 				
-					<cfcol header="Description" text="#description#" />
-				
-					<cfcol header="Image" text="#image#" />
-				
 	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />
 	<cfcol header="" text="#linkTo(text='Edit', action='edit', key=id)#" />
 	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
