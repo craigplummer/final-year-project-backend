@@ -32,6 +32,7 @@
 
 	<cffunction name="featured">
 		<cfset eventListing = model("event").findAll(where="featured=1")>
+		<cfset provides("json")>
 		<cfset renderWith(eventListing)>
 	</cffunction>
 
