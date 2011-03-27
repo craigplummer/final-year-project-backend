@@ -28,7 +28,7 @@
 		var auto_refresh = setInterval(
 			function ()
 				{
-				$('#load_paypal').load('http://ts.craigplummer.co.uk/orders/ppconfirm/?orderid=#params.orderid#');
+				$('##load_paypal').load('http://ts.craigplummer.co.uk/orders/ppconfirm/?orderid=#params.orderid#');
 			}, 10000);
 	</script>
 	
