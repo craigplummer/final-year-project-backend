@@ -28,19 +28,24 @@
 	
 	<cffunction name="device">
 		<cfset user = model("person").findOne(where="email='#params.email#'")>
-		<cfset device = model("device").new()>
-		<cfset device.id = createuuid()>
-		<cfset device.userid = "#user.id#">
-		<cfset device.devicetoken = "#params.token#">
-		<cfset device.save()>
-		
-		<cfif device.save()>
-			<cfset response = {}>
-			<cfset response['success'] = "true">
-		<cfelse>
-			<cfset response = {}>
+		<cfif model("device").exists(where="devicetoken='#params.token#'")>
+    		<cfset response = {}>
 			<cfset response['success'] = "false">
+    	<cfelse>
+    		<cfset device = model("device").new()>
+			<cfset device.id = createuuid()>
+			<cfset device.userid = "#user.id#">
+			<cfset device.devicetoken = "#params.token#">
+		
+			<cfif device.save()>
+				<cfset response = {}>
+				<cfset response['success'] = "true">
+			<cfelse>
+				<cfset response = {}>
+				<cfset response['success'] = "false">
+			</cfif>
 		</cfif>
+		
 		
 		<cfset renderWith(response)>
 		
