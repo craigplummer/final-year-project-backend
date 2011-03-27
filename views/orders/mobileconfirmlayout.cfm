@@ -32,7 +32,6 @@
 			}, 10000);
 	</script>
 	
-	<body onload="onLoad()">
 		
 	<div data-role="page" data-theme="b" id="jqm-home">
 			<div data-role="header" data-theme="b"> 
