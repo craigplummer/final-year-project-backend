@@ -11,7 +11,7 @@
 	<div data-role="fieldcontain">
 	<label for="order[qty]" class="select" data-native-menu="true">Choose quantity:</label>
 	<select name="order[qty]" id="select-choice-1">
-		<option value="1">1 Ticket: £#ticketdetails.ticketprice#</option>
+		<option value="1">1 Ticket: £#ticketdetails.price#</option>
 		<option value="2">2 Tickets: £#ticketprice.two#</option>
 		<option value="3">3 Tickets: £#ticketprice.three#</option>
 		<option value="4">4 Tickets: £#ticketprice.four#</option>
