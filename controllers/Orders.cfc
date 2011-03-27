@@ -6,6 +6,7 @@
 	<cffunction name="details">
 		<cfset eventdetails = model("event").findOne(where="id='#params.eventid#'")>
 		<cfset ticketdetails = model("ticket").findAll(where="eventid='#eventdetails.id#'")>
+		<cfset venuedetails = model("venues").findOne(where="id='#eventdetails.venueid#'")>
 
 	  <!--- <cfdump var="#eventdetails#" abort>
 		<cfdump var="#ticketdetails#"> --->
