@@ -1,5 +1,9 @@
 <cfcomponent extends="Controller" output="false">
 	
+	<cffunction name="init">
+		<cfset provides("json, html")>
+	</cffunction>
+	
 	<!--- categories/index --->
 	<cffunction name="index">
 		<cfset categories = model("Categories").findAll()>
@@ -15,6 +19,7 @@
 	    <cfif NOT IsObject(categories)>
 	        <cfset flashInsert(error="Categories #params.key# was not found")>
 	        <cfset redirectTo(action="index")>
+			
 	    </cfif>
 			
 	</cffunction>
@@ -82,6 +87,12 @@
 			<cfset flashInsert(error="There was an error deleting the categories.")>
 			<cfset redirectTo(action="index")>
 		</cfif>
+	</cffunction>
+	
+	<cffunction name="list">
+		<cfset categories = model("Categories").findAll()>
+		<cfset provides("json")>
+		<cfset renderWith(categories)>
 	</cffunction>
 	
 </cfcomponent>
