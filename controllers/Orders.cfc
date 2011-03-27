@@ -11,7 +11,7 @@
 	  <!--- <cfdump var="#eventdetails#" abort>
 		<cfdump var="#ticketdetails#"> --->
 
-		<cfset renderPage(layout="orderlayout")>
+		<cfset renderPage(layout="mobilelayout")>
 
 
 	</cffunction>
