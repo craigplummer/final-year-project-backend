@@ -86,4 +86,12 @@
 		</cfif>
 	</cffunction>
 	
+	<cffunction name="list">
+		
+		<cfset tags = model("Tags").findAll(where="categoryid='#params.id#'")>
+		
+		<cfset provides("json")>
+		<cfset renderWith(tags)>
+	</cffunction>
+	
 </cfcomponent>
