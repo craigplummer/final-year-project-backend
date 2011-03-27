@@ -28,7 +28,7 @@
 	
 	<cffunction name="device">
 		<cfset user = model("person").findOne(where="email='#params.email#'")>
-		<cfset device = model("devide").new()>
+		<cfset device = model("device").new()>
 		<cfset device.id = createuuid()>
 		<cfset device.userid = "#user.id#">
 		<cfset device.devicetoken = "#params.token#">
