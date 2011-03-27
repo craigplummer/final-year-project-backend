@@ -37,6 +37,7 @@
 		<cfset ticketdetails = model("ticket").findOne(where="id='#params.ticketdetails.id#'")>
 		<cfset order.ticketid = params.ticketdetails.id>
 		<cfset order.eventid = params.eventdetails.id>
+		<cfset order.userid = params.userdetails.id>
 		<cfset order.total = params.order.qty * ticketdetails.price>
 		<cfset order.id = createuuid()>
 		<cfset order.paymentstatus = 0>
