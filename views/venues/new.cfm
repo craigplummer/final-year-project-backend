@@ -11,9 +11,11 @@
 					
 						#textField(objectName='venues', property='description', label='Description')#
 					
-						#textField(objectName='venues', property='location', label='Location')#
+						
+							
+						#select(label = "Select a region", property="regionid", objectName="venues",  options=regions, includeBlank=true)# 
 					
-						#textField(objectName='venues', property='gps', label='Gps')#
+						
 					
 						#textField(objectName='venues', property='address1', label='Address1')#
 					

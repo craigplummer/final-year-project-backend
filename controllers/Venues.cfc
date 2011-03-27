@@ -22,6 +22,7 @@
 	<!--- venues/new --->
 	<cffunction name="new">
 		<cfset venues = model("Venues").new()>
+		<cfset regions = model("Regions").findAll(order="name")>
 	</cffunction>
 	
 	<!--- venues/edit/key --->
@@ -40,8 +41,10 @@
 	
 	<!--- venues/create --->
 	<cffunction name="create">
+		<cfset regions = model("Regions").findAll()>
 		<cfset venues = model("Venues").new(params.venues)>
 		<cfset venues.id = createuuid()>
+		
 		
 		<!--- Verify that the venues creates successfully --->
 		<cfif venues.save()>
@@ -82,6 +85,12 @@
 			<cfset flashInsert(error="There was an error deleting the venues.")>
 			<cfset redirectTo(action="index")>
 		</cfif>
+	</cffunction>
+	
+	<cffunction name="list">
+		<cfset regionListing = model("event").findAll(order="name")>
+		<cfset provides("json")>
+		<cfset renderWith(regionListing)>
 	</cffunction>
 	
 </cfcomponent>
