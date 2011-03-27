@@ -1,5 +1,5 @@
 ﻿<cfoutput>
-	<h2>#event.eventname#</h2>
+	<h2>#event.eventtitle#</h2>
 	<p><strong>Ticket type: </strong>#ticket.ticketname#</p>
 	<p><strong>Price: </strong>#ticket.price#</p>
 	<p><strong>Qty: </strong>#order.qty#</p>

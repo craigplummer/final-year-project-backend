@@ -55,7 +55,7 @@
 		<cfset event = model("event").findOne(where="id='#order.eventid#'")>
 		<cfset ticket = model("ticket").findOne(where="id='#order.ticketid#'")>
 
-		<cfset renderPage(layout="orderlayout")>
+		<cfset renderPage(layout="mobilelayout")>
 
 
 	</cffunction>
