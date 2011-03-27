@@ -8,6 +8,10 @@
 	<p>Thank you your order is now complete</p>
 	<p>Please ensure you re-sync your tickets to your device</p>
 	
+	<cfif #user.taccesstoken# NEQ "">
+		<a href="http://ts.craigplummer.co.uk/order/twitter/?userid=#user.id#&orderid=#order.id#" class="button">Tweet this purchase</a>
+	</cfif>
+	
 <cfelse>
 	<p>Sorry there has been a problem with your payment. Please email example@example.com</p>
 

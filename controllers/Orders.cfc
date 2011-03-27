@@ -70,6 +70,7 @@
 	
 	<cffunction name="ppconfirm">
 		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
+		<cfset user = model("person").findOne(where="id='#order.userid#'")>
 	
 		<cfset renderPage(layout="orderlayout")>
 	</cffunction>
