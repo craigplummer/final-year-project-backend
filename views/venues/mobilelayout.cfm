@@ -14,7 +14,11 @@
 		<!-- jQuery and jQuery UI from Google CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/javascripts/jquery.hyjack.select.min.js"></script> 
-
+			<script language=javascript>
+      $(document).bind("mobileinit", function () {
+            $.mobile.ajaxLinksEnabled = false;
+      });
+	</script>
 		<!-- jQuery Mobile Alpha 3 -->
 		<script src="/javascripts/jquerymobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
 		<link href="/javascripts/jquerymobile/jquery.mobile-1.0a3.min.css" media="all" rel="stylesheet" type="text/css" />
