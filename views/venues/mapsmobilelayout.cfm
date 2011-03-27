@@ -47,7 +47,7 @@
 	<body onLoad="onLoad();">
 		
 	<div data-role="page" data-theme="b" id="jqm-home">
-			<div data-role="header" data-theme="b"><a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+			<div data-role="header" data-theme="b"><a href="##" data-rel="back" data-icon="arrow-l">Back</a>
 				<h1>Ticketseller</h1> 
 		</div>
 	<div data-role="content">
