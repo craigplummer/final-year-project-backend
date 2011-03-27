@@ -3,7 +3,7 @@
 	<p><strong>Ticket type: </strong>#ticket.ticketname#</p>
 	<p><strong>Price: </strong>#ticket.price#</p>
 	<p><strong>Qty: </strong>#order.qty#</p>
-	<p><strong>Order Total: </strong>#order.total##</p>
+	<p><strong>Order Total: </strong>#order.total#</p>
 	
 	<p>To complete your order please click the Pay Now button below. You will be taken to PayPal to make your payment</p>
 
