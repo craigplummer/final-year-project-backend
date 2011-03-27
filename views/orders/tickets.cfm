@@ -3,7 +3,7 @@
 	<h2>#eventdetails.eventtitle#</h2>
 	<p><strong>Ticket type:</strong>#ticketdetails.ticketname#</h3>
 	<p>#ticketdetails.ticketdesc#</p>
-	<p><strong>Price each:</strong> £#ticketdetails.ticketprice#</p>
+	<p><strong>Price each:</strong> £#ticketdetails.price#</p>
 
 	<p>Please select the quantity you wish to purchase. Maximum 4 per order.</p>
 	#startFormTag(action="create")#
