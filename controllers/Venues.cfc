@@ -21,7 +21,7 @@
 	
 	<cffunction name="location">
 		
-	<cfinvoke component="/var/www/html/googlegeocoder3.cfc" method="googlegeocoder3" returnvariable="variables.geocode_query1">	  
+	<cfinvoke component="/var/www/html/miscellaneous/googlegeocoder3.cfc" method="googlegeocoder3" returnvariable="variables.geocode_query1">	  
 	  <cfinvokeargument name="address" value="1600 Amphitheatre Parkway, Mountain View, CA">
 	  <cfinvokeargument name="ShowDetails" value="false">
 	</cfinvoke>
