@@ -18,12 +18,36 @@
 		<!-- jQuery Mobile Alpha 3 -->
 		<script src="/javascripts/jquerymobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
 		<link href="/javascripts/jquerymobile/jquery.mobile-1.0a3.min.css" media="all" rel="stylesheet" type="text/css" />
-	</head>
 	
-	<body>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript">
+ 		 function onLoad() {
+    		var latlng = new google.maps.LatLng(#venues.latitude#, #venues.longitude#);
+    		var myOptions = {
+      		zoom: 17,
+      		center: latlng,
+     		mapTypeId: google.maps.MapTypeId.ROADMAP
+			
+    	};
+
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var marker = new google.maps.Marker({
+	      position: latlng, 
+	      map: map, 
+	      title:"#venues.name#"
+	  });
+   
+  }
+
+</script>
+	</head>
+
+
+	<body onLoad="onLoad();">
 		
 	<div data-role="page" data-theme="b" id="jqm-home">
-			<div data-role="header" data-theme="b"> 
+			<div data-role="header" data-theme="b"><a href="#" data-rel="back" data-icon="arrow-l">Back</a>
 				<h1>Ticketseller</h1> 
 		</div>
 	<div data-role="content">
