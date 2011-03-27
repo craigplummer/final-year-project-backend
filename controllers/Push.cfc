@@ -17,4 +17,16 @@
 	<cfabort>
 </cffunction>
 
+<cffunction name="inactive">
+	<cfset APNSService = createObject( "java", "com.notnoop.apns.APNS" ).newService()
+  	.withCert("/var/www/html/lib/push.p12", "3nv3l0p3")
+  	.withProductionDestination()
+  	.build() />
+	
+	<cfset inactiveDevices = APNSService.getInactiveDevices()>
+	
+	<cfdump var="#inactiveDevices#" abort>
+
+</cffunction>
+
 </cfcomponent>
