@@ -19,16 +19,7 @@
 			
 	</cffunction>
 	
-	<cffunction name="location">
-		
-	<cfinvoke component="/var/www/html/miscellaneous/googlegeocoder3.cfc" method="googlegeocoder3" returnvariable="variables.geocode_query1">	  
-	  <cfinvokeargument name="address" value="1600 Amphitheatre Parkway, Mountain View, CA">
-	  <cfinvokeargument name="ShowDetails" value="false">
-	</cfinvoke>
 
-	<cfdump var="#variables.geocode_query1#">
-		
-	</cffunction>
 	
 	<!--- venues/new --->
 	<cffunction name="new">
@@ -50,11 +41,27 @@
 		
 	</cffunction>
 	
+	<cffunction name="details">
+		
+		<cfset venues = model("Venues").findOne(where="id='#params.id#'")>
+		
+		<cfset renderPage(layout="mobilelayout")>
+		
+	</cffunction>
+	
 	<!--- venues/create --->
 	<cffunction name="create">
 		<cfset regions = model("Regions").findAll()>
 		<cfset venues = model("Venues").new(params.venues)>
 		<cfset venues.id = createuuid()>
+		
+		<cfinvoke component="mycfc.googlegeocoder3" method="googlegeocoder3" returnvariable="variables.geocode_query">	  
+		  <cfinvokeargument name="address" value="#venues.address1#, #venues.towncity#, #venues.postcode#, UK">
+		  <cfinvokeargument name="ShowDetails" value="false">
+		</cfinvoke>
+		
+		<cfset venues.latitude = "#variables.geocode_query.latitude#">
+		<cfset venues.longitude = "#variables.geocode_query.longitude#">
 		
 		
 		<!--- Verify that the venues creates successfully --->
