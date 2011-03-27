@@ -45,7 +45,7 @@
 	  <cfinvokeargument name="ShowDetails" value="true">
 	</cfinvoke>
 	
-	<cfdump var="#variables.geocode_query#" abort>
+	<cfdump var="#variables.geocode_query[15].address_long_name#" abort>
 		
 	</cffunction>
 	
