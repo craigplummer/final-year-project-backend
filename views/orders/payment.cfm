@@ -7,7 +7,8 @@
 	
 	<p>To complete your order please click the Pay Now button below. You will be taken to PayPal to make your payment</p>
 
-#showPaypalButton(type="_xclick",
+#showPaypalButton(
+type="_xclick",
 business="sell_1299181492_biz@craigplummer.co.uk",
 amount="#ticket.price#",
 itemName="#event.eventtitle# - #ticket.ticketname#",
@@ -16,6 +17,7 @@ quantity="#order.qty#",
 custom="#params.orderid#",
 return="http://ts.craigplummer.co.uk/orders/confirm/?orderid=#params.orderid#",
 notifyUrl="http://ts.craigplummer.co.uk/orders/verify/?orderid=#params.orderid#",
-currency="GBP")#
+currency="GBP",
+datarole="none")#
 
 </cfoutput>
