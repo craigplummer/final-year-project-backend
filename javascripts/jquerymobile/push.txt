@@ -1,0 +1,15 @@
+// Create the NSURL for the request  
+NSString *urlFormat = @"https://go.urbanairship.com/api/device_tokens/%@";  
+NSURL *registrationURL = [NSURL URLWithString:[NSString stringWithFormat:  
+											   urlFormat, tokenString]]; 
+// Create the registration request  
+NSMutableURLRequest *registrationRequest = [[NSMutableURLRequest alloc]  
+											initWithURL:registrationURL];  
+[registrationRequest setHTTPMethod:@"PUT"];  
+
+// And fire it off  
+NSURLConnection *connection = [NSURLConnection connectionWithRequest:registrationRequest  
+															delegate:self];  
+[connection start];  
+
+NSLog(@"We successfully registered for push notifications");

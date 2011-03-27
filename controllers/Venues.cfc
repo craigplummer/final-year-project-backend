@@ -19,6 +19,17 @@
 			
 	</cffunction>
 	
+	<cffunction name="location">
+		
+	<cfinvoke component="/var/www/html/googlegeocoder3.cfc" method="googlegeocoder3" returnvariable="variables.geocode_query1">	  
+	  <cfinvokeargument name="address" value="1600 Amphitheatre Parkway, Mountain View, CA">
+	  <cfinvokeargument name="ShowDetails" value="false">
+	</cfinvoke>
+
+	<cfdump var="#variables.geocode_query1#">
+		
+	</cffunction>
+	
 	<!--- venues/new --->
 	<cffunction name="new">
 		<cfset venues = model("Venues").new()>
