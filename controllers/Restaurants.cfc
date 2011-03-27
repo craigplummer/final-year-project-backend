@@ -40,7 +40,7 @@
 	
 	<cffunction name="list">
 		
-	<cfinvoke component="googlegeocoder3" method="googlegeocoder3" returnvariable="variables.geocode_query">	  
+	<cfinvoke component="mycfc.googlegeocoder3" method="googlegeocoder3" returnvariable="variables.geocode_query">	  
 	  <cfinvokeargument name="latlng" value="#params.latitude#,#params.longitude#">
 	  <cfinvokeargument name="ShowDetails" value="true">
 	</cfinvoke>
