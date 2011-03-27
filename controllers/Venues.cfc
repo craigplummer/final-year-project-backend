@@ -88,9 +88,9 @@
 	</cffunction>
 	
 	<cffunction name="list">
-		<cfset regionListing = model("event").findAll(order="name")>
+		<cfset venueListing = model("Venues").findAll(where="id='#params.id#'")>
 		<cfset provides("json")>
-		<cfset renderWith(regionListing)>
+		<cfset renderWith(venueListing)>
 	</cffunction>
 	
 </cfcomponent>
