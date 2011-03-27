@@ -20,7 +20,6 @@
 			$.mobile.ajaxFormsEnabled = false;
 			$.mobile.selectmenu.prototype.options.nativeMenu = true;
 });
-      });
 	</script>
 		<!-- jQuery Mobile Alpha 3 -->
 		<script src="/javascripts/jquerymobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
