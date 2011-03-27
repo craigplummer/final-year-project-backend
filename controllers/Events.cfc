@@ -35,5 +35,11 @@
 		<cfset provides("json")>
 		<cfset renderWith(eventListing)>
 	</cffunction>
+	
+	<cffunction name="categorylist">
+		<cfset eventListing = model("event").findAll(where="categoryid='#params.id#'")>
+		<cfset provides("json")>
+		<cfset renderWith(eventListing)>
+	</cffunction>
 
 </cfcomponent>
