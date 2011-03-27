@@ -8,4 +8,6 @@
 <p>#venues.postcode#</p>
 <p><strong>Phone Number:</strong></p>
 <p>#venues.phone#</p>
+
+<a href="maps/?id=#venues.id#" data-role="button">View Map</a>
 </cfoutput>
