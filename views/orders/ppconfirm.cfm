@@ -9,7 +9,7 @@
 	<p>Please ensure you re-sync your tickets to your device</p>
 	
 	<cfif #user.taccesstoken# NEQ "">
-		<a href="http://ts.craigplummer.co.uk/order/twitter/?userid=#user.id#&orderid=#order.id#" class="button">Tweet this purchase</a>
+		<a href="http://ts.craigplummer.co.uk/orders/twitter/?userid=#user.id#&orderid=#order.id#" class="button">Tweet this purchase</a>
 	</cfif>
 	
 <cfelse>

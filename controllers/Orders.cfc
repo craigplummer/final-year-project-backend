@@ -74,6 +74,19 @@
 	
 		<cfset renderPage(layout="orderlayout")>
 	</cffunction>
+	
+	<cffunction name="twitter">
+		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
+		<cfset user = model("person").findOne(where="id='#params.userid#'")>
+		<cfset event = model("event").findOne(where="id='#order.eventid#'")>
+		
+		<cfset Twitter = createObject("java", "twitter4j.Twitter")>
+		<cfset Twitter.setOAuthConsumer('q8RebEtK6UObawa7Ia4zQ','SrenfcKPuFwVporxcjIpZvFXQoWDSy6QUa3GOAhxo')>
+		<cfset Twitter.setOAuthAccessToken('#user.taccesstoken#','#user.taccesssecret#')>
+		<cfset Twitter.updateStatus("I just purchased tickets for #event.eventtitle# on Ticketseller. http://www.ticketseller.co.uk")>
+ 
+ 		<cfset renderPage(layout="mobilelayout")>
+	</cffunction>
 
 	<cffunction name="verify">
 		<cfset order = model("order").findOne(where="id='#params.orderid#'")>
@@ -114,16 +127,13 @@
 
 				  </cfif>
 		
-		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
+		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="fyproject@craigplummer.co.uk">
 			<cfoutput>
 			<cfdump var="#return#" format="text">
 			<cfdump var="#params#" format="text">
 			#numberformat(ordertotal, '.99')#
 			</cfoutput>
 		</cfmail>
-		
-		
-
 		
 
 
