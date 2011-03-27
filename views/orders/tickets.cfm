@@ -9,8 +9,8 @@
 	#startFormTag(action="create")#
 		
 	<div data-role="fieldcontain">
-	<label for="order[qty]" class="select" data-native-menu="true">Choose quantity:</label>
-	<select name="order[qty]" id="select-choice-1">
+	<label for="order[qty]" class="select" >Choose quantity:</label>
+	<select name="order[qty]" id="select-choice-1" data-native-menu="true">
 		<option value="1">1 Ticket: £#ticketdetails.price#</option>
 		<option value="2">2 Tickets: £#numberformat(ticketprice.two, '.99')#</option>
 		<option value="3">3 Tickets: £#numberformat(ticketprice.three, '.99')#</option>

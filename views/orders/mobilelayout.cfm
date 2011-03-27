@@ -18,7 +18,6 @@
       $(document).bind("mobileinit", function () {
             $.mobile.ajaxLinksEnabled = false;
 			$.mobile.ajaxFormsEnabled = false;
-			$.mobile.selectmenu.prototype.options.nativeMenu = true;
 });
 	</script>
 		<!-- jQuery Mobile Alpha 3 -->
