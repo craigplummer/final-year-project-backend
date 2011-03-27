@@ -1,7 +1,7 @@
 ﻿<cfoutput>
 
 	<h2>#eventdetails.eventtitle#</h2>
-	<p><strong>Ticket type:</strong>#ticketdetails.ticketname#</h3>
+	<p><strong>Ticket type: </strong>#ticketdetails.ticketname#</h3>
 	<p>#ticketdetails.ticketdesc#</p>
 	<p><strong>Price each:</strong> £#ticketdetails.price#</p>
 
@@ -12,9 +12,9 @@
 	<label for="order[qty]" class="select" data-native-menu="true">Choose quantity:</label>
 	<select name="order[qty]" id="select-choice-1">
 		<option value="1">1 Ticket: £#ticketdetails.price#</option>
-		<option value="2">2 Tickets: £#ticketprice.two#</option>
-		<option value="3">3 Tickets: £#ticketprice.three#</option>
-		<option value="4">4 Tickets: £#ticketprice.four#</option>
+		<option value="2">2 Tickets: £#numberformat(ticketprice.two, '.99')#</option>
+		<option value="3">3 Tickets: £#numberformat(ticketprice.three, '.99')#</option>
+		<option value="4">4 Tickets: £#numberformat(ticketprice.four, '.99')#</option>
 	</select>
 </div>
 
