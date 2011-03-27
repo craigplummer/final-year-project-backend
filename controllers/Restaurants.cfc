@@ -45,7 +45,15 @@
 	  <cfinvokeargument name="ShowDetails" value="true">
 	</cfinvoke>
 	
-	<cfdump var="#variables.geocode_query[15].address_long_name#" abort>
+	<cfloop query="variables.geocode_query">
+		<cfif #variables.geocode_query.address_type# EQ "Locality">
+		<cfset locality = "#variables.geocode_query.address_long_name#">
+		</cfif>
+	</cfloop>
+	
+	<cfset restaurantListing = model("Restaurants").findAll(where="towncity='#locality#'")>
+	<cfset provides("json")>
+	<cfset renderWith(restaurantListing)>
 		
 	</cffunction>
 	
