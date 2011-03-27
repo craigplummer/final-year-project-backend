@@ -83,17 +83,7 @@
 
 		<cfset return = verifyPaypalPayment(receiverEmail="sell_1299181492_biz@craigplummer.co.uk", price="#numberformat(ordertotal, '.99')#", currency="GBP", itemNumber="#order.ticketid#", custom="#params.orderid#")>
 
-		<cfset result = model("order").updateOne(where="id='#params.orderid#'", paymentstatus=#return#)>
-		
-		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
-			<cfoutput>
-			<cfdump var="#return#" format="text">
-			<cfdump var="#params#" format="text">
-			#numberformat(ordertotal, '.99')#
-			</cfoutput>
-		</cfmail>
-		
-		<cfif order.paymentstatus EQ "1">
+		<cfif #return# EQ 1>
 			<!---First Generate a Ticket Number--->
 			
 			<cfset CharSet = "QWERTYUPASDFGHJKLZXCVBNM23456789" />
@@ -120,9 +110,21 @@
 		<cfimage action = "write" destination = "/var/www/html/barcodes/#params.orderid#.png" source = "#img#">
 		<cfimage source="/var/www/html/barcodes/#params.orderid#.png" name="barcodeLocation">
   		<!--- display results --->  
-		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcodeLocation)#", ticketnumber="#ticketNumber#")>
+		<cfset ticketbarcode = model("order").updateOne(where="id='#params.orderid#'", barcode="#imageGetBlob(barcodeLocation)#", ticketnumber="#ticketNumber#", paymentstatus=#return#)>
 
-		</cfif>
+				  </cfif>
+		
+		<cfmail from="craig@craigplummer.co.uk" subject="PayPal" to="craigplummer@me.com">
+			<cfoutput>
+			<cfdump var="#return#" format="text">
+			<cfdump var="#params#" format="text">
+			#numberformat(ordertotal, '.99')#
+			</cfoutput>
+		</cfmail>
+		
+		
+
+		
 
 
 	</cffunction>
