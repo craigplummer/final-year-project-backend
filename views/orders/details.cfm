@@ -12,9 +12,9 @@
 	<ul data-role="listview" data-inset="true">
 		<li data-role="list-divider" >Select ticket type</li>
 	<cfloop query="ticketdetails">
-		<li><a href="/orders/tickets?ticketid=#ticketdetails.id#"><h3>#ticketdetails.ticketname#</h3></a>
+		<li><a href="/orders/tickets?ticketid=#ticketdetails.id#&userid=#userdetails.id#"><h3>#ticketdetails.ticketname#</h3></a>
 		<p>#ticketdetails.ticketdesc#</p>
-		<p>#ticketdetails.price#</p>
+		<p>£#ticketdetails.price#</p>
 		</li>
 	</cfloop>
 	</ul>

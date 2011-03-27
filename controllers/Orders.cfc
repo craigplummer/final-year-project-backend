@@ -5,6 +5,7 @@
 
 	<cffunction name="details">
 		<cfset eventdetails = model("event").findOne(where="id='#params.eventid#'")>
+		<cfset userdetails = model("person").findOne(where="email='#params.email#'")>
 		<cfset ticketdetails = model("ticket").findAll(where="eventid='#eventdetails.id#'")>
 		<cfset venuedetails = model("venues").findOne(where="id='#eventdetails.venueid#'")>
 
@@ -20,9 +21,14 @@
 		<cfset order = model("order").new()>
 
 		<cfset ticketdetails = model("ticket").findOne(where="id='#params.ticketid#'")>
+		<cfset userdetails = model("person").findOne(where="id='#params.userid#'")>
 		<cfset eventdetails = model("event").findOne(where="id='#ticketdetails.eventid#'")>
+		
+		<cfset ticketprice.two = #ticketdetails.price# * 2>
+		<cfset ticketprice.three = #ticketdetails.price# * 3>
+		<cfset ticketprice.four = #ticketdetails.price# * 4>
 
-		<cfset renderPage(layout="orderlayout")>
+		<cfset renderPage(layout="mobilelayout")>
 	</cffunction>
 
 	<cffunction name="create">

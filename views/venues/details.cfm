@@ -9,5 +9,5 @@
 <p><strong>Phone Number:</strong></p>
 <p>#venues.phone#</p>
 
-<a href="maps/?id=#venues.id#" data-role="button">View Map</a>
+<a href="http://ts.craigplummer.co.uk/venues/maps/?id=#venues.id#" data-role="button">View Map</a>
 </cfoutput>
