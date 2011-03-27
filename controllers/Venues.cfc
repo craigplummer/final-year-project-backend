@@ -88,7 +88,7 @@
 	</cffunction>
 	
 	<cffunction name="list">
-		<cfset venueListing = model("Venues").findAll(where="id='#params.id#'")>
+		<cfset venueListing = model("Venues").findAll(where="regionid='#params.id#'")>
 		<cfset provides("json")>
 		<cfset renderWith(venueListing)>
 	</cffunction>
