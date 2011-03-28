@@ -48,7 +48,7 @@ function AddNewTicket(){
  	var jTicketTemplate = $( "#ticket-templates div.tickettemplate" );
 	var jTicket = jTicketTemplate.clone(); 
 	var strNewHTML = jTicket.html();
-	var intNewTicketCount = (jFilesContainer.find( "div.tickettemplate" ).length + 1); 
+	var intNewTicketCount = (jTicketContainer.find( "div.tickettemplate" ).length + 1); 
 	jTicket.attr( "id", ("emailedit[" + intNewTicketCount + "]") );
  	strNewHTML = strNewHTML
 		.replace(

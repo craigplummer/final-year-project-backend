@@ -57,5 +57,5 @@
 </div>
 <div class="clearfix"></div>
 
-#includePartial("eticketTemplate")#
+#includePartial("ticketTemplate")#
 </cfoutput>

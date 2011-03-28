@@ -43,7 +43,7 @@
 	
 	<cffunction name="details">
 		<cfset venues = model("Venues").findOne(where="id='#params.id#'")>
-		<cfset renderPage(layout="mobilelayout")>
+		<cfset renderPage(layout="detailsmobilelayout")>
 	</cffunction>
 	
 	<cffunction name="maps">
