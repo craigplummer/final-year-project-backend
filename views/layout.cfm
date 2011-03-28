@@ -61,7 +61,7 @@
         ddCancel: '/images/cancel.png',    // cancel.png
         ddImageClass: 'class_of_arrow',     // hjsel_ddImage
         ddCancelClass: 'class_of_cancel',   // hjsel_ddCancel
-        emptyMessage: '<a href=\'/venue/new\'>Add New Venue</a>',   // No Items to Display
+        emptyMessage: '<a href=\'/venues/new\'>Add New Venue</a>',   // No Items to Display
         filter: 'like',         // 'like', 'first', 'words'
         restrictSearch: false          // false
     });
