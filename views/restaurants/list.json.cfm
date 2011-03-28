@@ -9,7 +9,8 @@
 		{	
 			"id" = restaurantListing.id,
 			"eventtitle" = restaurantListing.name,
-			"type" = restaurantListing.type
+			"type" = restaurantListing.type,
+			"location" = locality
 		}
 	)>
 </cfloop>
