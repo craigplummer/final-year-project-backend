@@ -47,6 +47,13 @@
 
 		<cfset redirectTo(controller="orders", action="payment", params="orderid=#order.id#")>
 	</cffunction>
+	
+	<cffunction name="list">
+		<cfset user = model("person").findOne(where="email='#params.email#'")>
+		<cfset ordersListing = model("order").findAll(where="userid='#user.id#'")>
+		<cfset provides("json")>
+		<cfset renderWith(ordersListing)>
+	</cffunction>
 
 	<cffunction name="payment">
 
