@@ -11,6 +11,8 @@
 </cfif>
 
 #startFormTag(action="create")#
+	
+	#errorMessagesFor("event")#
 <ul class="form">
 <li><label for="event-venueid">Search for venue</label>
 <select name="event[venueid]" id="event-venueid">

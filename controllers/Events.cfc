@@ -36,12 +36,10 @@
 
 
 		<cfif event.hasErrors()>
-			<cfdump var="#event.allerrors()#">
-			<cfabort>
 			<cfset renderPage(action="new")>
 		<cfelse>
 			<cfset flashInsert(success="Your event was added sucessfully")>
-			<cfset redirectTo(controller="events", action="new")>
+			<cfset redirectTo(controller="events", action="created")>
 		</cfif>
 		
 		
