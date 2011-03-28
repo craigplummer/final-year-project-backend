@@ -50,7 +50,7 @@
 	
 	<cffunction name="list">
 		<cfset user = model("person").findOne(where="email='#params.email#'")>
-		<cfset orderListing = model("order").findAll(where="userid='#user.id#'")>
+		<cfset orderListing = model("order").findAll(where="userid='#user.id# and paymentstaus=1'")>
 		<cfset provides("json")>
 		<cfset renderWith(orderListing)>
 	</cffunction>
