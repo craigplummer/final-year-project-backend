@@ -63,7 +63,7 @@
 	<cffunction name="details">
 		<cfset restaurant = model("Restaurants").findOne(where="id='#params.id#'")>
 		
-		<cfset renderWith(mobilelayout)>
+		<cfset renderPage(layout="mobilelayout")>
 		
 	</cffunction>
 	
