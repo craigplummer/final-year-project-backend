@@ -59,7 +59,7 @@
 	
 	<cffunction name="list">
 		<cfset user = model("person").findOne(where="email='#params.email#'")>
-		<cfset orderListing = model("order").findAll(where="userid='#user.id#' and paymentstatus=1")>
+		<cfset orderListing = model("order").findAll(where="userid='#user.id#' AND paymentstatus=1")>
 		<cfset provides("json")>
 		<cfset renderWith(orderListing)>
 	</cffunction>
