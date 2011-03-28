@@ -1,0 +1,13 @@
+﻿<cfoutput>
+<h2>#restaurants.name#</h2>
+<p><strong>Type:</strong></p>
+<p>#restaurants.type#</p>
+<p><strong>Address:</strong></p>
+<p>#restaurants.address1#</p>
+<p>#restaurants.address2#</p>
+<p>#restaurants.towncity#</p>
+<p>#restaurants.county#</p>
+<p>#restaurants.postcode#</p>
+<p><strong>Phone:</strong></p>
+<p>#restaurants.phone#</p>
+</cfoutput>
