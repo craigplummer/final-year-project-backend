@@ -1,12 +1,11 @@
-<h1>Listing venues</h1>
+<div id="main-content">
+<h2>Venues</h2>
 
 <cftable query="venues" colHeaders="true" HTMLTable="true">
 	
 					<cfcol header="Id" text="#id#" />
 				
 					<cfcol header="Name" text="#name#" />
-				
-					<cfcol header="Description" text="#description#" />
 				
 					<cfcol header="Location" text="#location#" />
 				
@@ -34,3 +33,5 @@
 <cfoutput>
 	<p>#linkTo(text="New venues", action="new")#</p>
 </cfoutput>
+
+</h2>
