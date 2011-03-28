@@ -33,7 +33,6 @@
 						<nav id="main-navigation">
 							<ul>
 								<li>#linkTo(text="Dashboard", controller="account", action="dashboard")#</li>
-								<li>#linkTo(text="My Events", controller="events", action="home")#</li>
 								<li id="add-event">#linkTo(text="Add New Event", controller="events", action="new")#</li>
 								<li id="logged-in">#session.user.firstname# #session.user.surname#</li>
 							</ul>
