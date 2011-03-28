@@ -1,5 +1,5 @@
 ﻿<cfset dataToReturn = []>
-<cfloop query="eventListing">
+<cfloop query="orderListing">
 	<cfquery name="qGetEvent" datasource="ticketseller">
 		SELECT * FROM events WHERE id='#orderListing.eventid#'
 	</cfquery>
