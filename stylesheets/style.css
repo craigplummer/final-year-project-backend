@@ -56,7 +56,7 @@ del { text-decoration: line-through; }
 abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
 
 /* tables still need cellspacing="0" in the markup */
-table { border-collapse:collapse; border-spacing:0; }
+table { border-collapse:collapse; border-spacing:0; margin-top: 10px;}
 
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 
@@ -116,9 +116,9 @@ ul { margin-left:30px; }
 ol { margin-left:30px; list-style-type: decimal; }
 
 small { font-size:85%; }
-strong, th { font-weight: bold; }
+strong, th { font-weight: bold; font-size: 120%; margin-right:20px;}
 
-td, td img { vertical-align:top; } 
+td, td img { vertical-align:top; font-size: 110%; padding-right: 20px; } 
 
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
@@ -436,9 +436,9 @@ ul.form li {
 }
 
 #addnewticket{
-	display: block;
+	
 	text-decoration:none;
-	width: 115px;
+	
 	padding: 10px;
 	color: #ffffff;
 	border: 1px solid #3A6E0B;

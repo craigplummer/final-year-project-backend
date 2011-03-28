@@ -57,6 +57,13 @@
 		
 	</cffunction>
 	
+	<cffunction name="dashboard">
+		<cfset events = model("event").findAll(where="personid='#session.user.id#'")>
+		
+		
+		
+	</cffunction>
+	
 	<cffunction name="mobilecreate">
 		<cfset user = model("person").new(params.user)>
 		<cfset user.id = createuuid()>

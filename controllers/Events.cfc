@@ -10,6 +10,33 @@
 		<cfset category = model("category").findAll()>
 		<cfset venues = model("Venues").findAll()>
 	</cffunction>
+	
+	<cffunction name="edit">
+		 <cfset event = model("event").findByKey(key=params.key, include="tickets")>
+    	<cfset category = model("category").findAll()>
+		<cfset venues = model("Venues").findAll()>
+    	<!--- Check if the record exists --->
+	    <cfif NOT IsObject(event)>
+	        <cfset flashInsert(error="Regions #params.key# was not found")>
+			<cfset redirectTo(action="index")>
+	    </cfif>
+	</cffunction>
+	
+	<cffunction name="update">
+	<cfset event = model("event").findByKey(params.key)>
+	<cfset category = model("category").findAll()>
+	<cfset venues = model("Venues").findAll()>
+		
+		<!--- Verify that the regions updates successfully --->
+		<cfif event.update(params.event)>
+			<cfset flashInsert(success="The regions was updated successfully.")>	
+            <cfset redirectTo(action="index")>
+		<!--- Otherwise --->
+		<cfelse>
+			<cfset flashInsert(error="There was an error updating the regions.")>
+			<cfset renderPage(action="edit")>
+		</cfif>
+	</cffunction>
 
 	<cffunction name="create">
 		<cfset venues = model("Venues").findAll()>
