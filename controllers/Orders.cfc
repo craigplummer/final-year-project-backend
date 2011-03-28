@@ -48,9 +48,18 @@
 		<cfset redirectTo(controller="orders", action="payment", params="orderid=#order.id#")>
 	</cffunction>
 	
+	<cffunction name="ticketdetail">
+		<cfset order = model("order").findOne(where="id='#params.id#'")>
+		<cfset event = model("event").findOne(where="id='#order.eventid#'")>
+		<cfset venue = model("Venues").findOne(where="id='#event.venueid#'")>
+		
+		<cfset renderPage(layout="mobilelayout")>
+		
+	</cffunction>
+	
 	<cffunction name="list">
 		<cfset user = model("person").findOne(where="email='#params.email#'")>
-		<cfset orderListing = model("order").findAll(where="userid='#user.id# and paymentstatus=1'")>
+		<cfset orderListing = model("order").findAll(where="userid='#user.id#' and paymentstatus=1")>
 		<cfset provides("json")>
 		<cfset renderWith(orderListing)>
 	</cffunction>
