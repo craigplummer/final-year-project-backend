@@ -128,8 +128,8 @@
 		
 		<cfset ticketText = "http://mobile.ticketseller.co.uk/ticket/#ticketNumber#" />  
     	<!--- initialize writer and create a new barcode matrix --->  
-    	<cfset BarcodeFormat = createObject("com.google.zxing.BarcodeFormat") />  
-    	<cfset writer = createObject("com.google.zxing.qrcode.QRCodeWriter").init() />  
+    	<cfset BarcodeFormat = createObject("java", "com.google.zxing.BarcodeFormat") />  
+    	<cfset writer = createObject("java", "com.google.zxing.qrcode.QRCodeWriter").init() />  
     	<cfset bitMatrix = writer.encode( ticketText, BarcodeFormat.QR_CODE, 120, 120 )>  
     	<!--- render the matrix as a bufferedimage --->  
     	<cfset converter = application.javaloader.create("com.google.zxing.client.j2se.MatrixToImageWriter")>  
