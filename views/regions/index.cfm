@@ -1,8 +1,10 @@
-<h1>Listing regions</h1>
+<div id="main-content">
+<h2>Regions</h2>
+<p>This is a listing of all the regions currently listed. You can add new regions and change existing ones from here</p>
 
 <cftable query="regions" colHeaders="true" HTMLTable="true">
 	
-					<cfcol header="Id" text="#id#" />
+					
 				
 					<cfcol header="Name" text="#name#" />
 				
@@ -12,5 +14,8 @@
 </cftable>
 
 <cfoutput>
-	<p>#linkTo(text="New regions", action="new")#</p>
+	<p>#linkTo(text="New regions", action="new", id="addnewticket")#</p>
 </cfoutput>
+
+</div>
+<div class="clearfix"></div>
