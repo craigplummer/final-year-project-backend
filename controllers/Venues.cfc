@@ -72,7 +72,7 @@
 		<!--- Verify that the venues creates successfully --->
 		<cfif venues.save()>
 			<cfset flashInsert(success="The venues was created successfully.")>
-            <cfset redirectTo(action="index")>
+            <cfset redirectTo(action="new")>
 		<!--- Otherwise --->
 		<cfelse>
 			<cfset flashInsert(error="There was an error creating the venues.")>

@@ -1,7 +1,7 @@
 
 <div id="main-content">
-<h2>Add New Event</h2>
-<p>Please complete all the fields below to add your event</p>
+<h2>Add New Venue</h2>
+<p>Please complete all the fields below to add a new venue</p>
 <cfoutput>
 
 			#errorMessagesFor("venues")#
@@ -19,11 +19,11 @@
 					
 						
 					
-						<li>#textField(objectName='venues', property='address1', label='Address1', class="main-content-form")#</li>
+						<li>#textField(objectName='venues', property='address1', label='Address Line 1', class="main-content-form")#</li>
 					
-						<li>#textField(objectName='venues', property='address2', label='Address2', class="main-content-form")#</li>
+						<li>#textField(objectName='venues', property='address2', label='Address Line 2', class="main-content-form")#</li>
 					
-						<li>#textField(objectName='venues', property='towncity', label='Towncity', class="main-content-form")#</li>
+						<li>#textField(objectName='venues', property='towncity', label='Town/City', class="main-content-form")#</li>
 					
 						<li>#textField(objectName='venues', property='county', label='County', class="main-content-form")#</li>
 					
