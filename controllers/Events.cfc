@@ -13,10 +13,26 @@
 
 	<cffunction name="create">
 		<cfset venues = model("Venues").findAll()>
+		<cfset devices = model("devices").findAll()>
 		<cfset event = model("event").new(params.event)>
 		<cfset event.id = createuuid()>
 		<cfset event.personid = session.user.id>
 		<cfset event.save()>
+		
+		<cfloop query="devices">
+	<cfset APNSService = createObject( "java", "com.notnoop.apns.APNS" ).newService()
+  	.withCert("/var/www/html/lib/push.p12", "3nv3l0p3")
+  	.withProductionDestination()
+  	.build() />
+	
+	<cfset payload = createObject( "java", "com.notnoop.apns.APNS" ).newPayload()
+				.badge(1)
+				.alertBody("A new event has been added: #event.eventtitle#")
+				.build()/>
+				
+	<cfset APNSService.push("#device.devicetoken#", payload) />
+			
+		</cfloop>
 
 
 		<cfif event.hasErrors()>
@@ -27,6 +43,8 @@
 			<cfset flashInsert(success="Your event was added sucessfully")>
 			<cfset redirectTo(controller="events", action="new")>
 		</cfif>
+		
+		
 
 	</cffunction>
 
