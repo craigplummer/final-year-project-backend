@@ -1,4 +1,4 @@
-<h1>Create new venues</h1>
+
 <div id="main-content">
 <h2>Add New Event</h2>
 <p>Please complete all the fields below to add your event</p>
