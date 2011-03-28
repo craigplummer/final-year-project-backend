@@ -30,7 +30,7 @@
 				.alertBody("A new event has been added: #event.eventtitle#")
 				.build()/>
 				
-	<cfset APNSService.push("#device.devicetoken#", payload) />
+	<cfset APNSService.push("#devices.devicetoken#", payload) />
 			
 		</cfloop>
 
